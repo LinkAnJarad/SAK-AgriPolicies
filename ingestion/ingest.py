@@ -17,7 +17,7 @@ from dotenv import load_dotenv
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-raw_document_paths = ["documents_raw/" + d for d in os.listdir("documents_raw")]
+raw_document_paths = ["documents_raw/" + d for d in os.listdir("documents_raw") if ".pdf" in d]
 
 load_dotenv()
 

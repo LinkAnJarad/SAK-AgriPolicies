@@ -15,3 +15,4 @@ wheels/
 doc_cache/*.pkl
 
 chroma_agripolicy_kb
+documents_raw/*.pdf

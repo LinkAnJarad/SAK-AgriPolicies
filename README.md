@@ -13,6 +13,7 @@
 ```
 uv venv
 uv sync
+uv run python -m data_download.download_pdfs
 uv run python -m ingestion.ingest
 ```
 
