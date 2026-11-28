@@ -5,7 +5,7 @@ from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 import os
 
-from agent.agent_tools import lexical_retrieve, semantic_retrieve, read_document
+from agent import agent_tools
 
 class Agent:
     def __init__(self):
@@ -20,7 +20,11 @@ class Agent:
 
         self.agent = create_agent(
             model = model,
-            tools = [lexical_retrieve, semantic_retrieve, read_document],
+            tools = [
+                agent_tools.lexical_retrieve_tool, 
+                agent_tools.semantic_retrieve_tool, 
+                agent_tools.read_document_tool
+            ],
             system_prompt = "You are an intelligent assistant for assisting with searching information related to Philippine argicultural policies. Use the tools available to you to answer the user's question, which allows you to query a knowledge base. Do not invent tool results or answers if they are not present from the knowledge base. Always cite your answers." # replace with config.py
         )
 
